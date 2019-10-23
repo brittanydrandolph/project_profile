@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+/* @import "material/fab/mdc-fab"; */
+body{
+    background-image: linear-gradient(#bbc9c3, #6a8d7e);
+    /* width: 100vw; */
+}

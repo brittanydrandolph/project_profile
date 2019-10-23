@@ -1,0 +1,386 @@
+<mat-toolbar class="px-0 col-sm-12" color="">
+    <mat-toolbar-row>
+      <span class="initals" id="top">B. RANDOLPH</span>
+      <span class="example-spacer"></span>
+      <a href="#about"><mat-icon class="material-icons" style="margin-top: 15px;">account_circle</mat-icon></a>
+      <a href="#tech"><mat-icon class="material-icons" style="margin-top: 15px;">build</mat-icon></a>
+      <a href="#projects"><mat-icon class="material-icons" style="margin-top: 15px;">create</mat-icon></a>
+      <mat-icon style="margin-top: 10px;" data-toggle="modal" data-target="#contactModal" class="material-icons">email</mat-icon>
+      <a href="https://www.linkedin.com/in/brittanydrandolph/"><img style="height:20px; margin-right: 10px; margin-left:3px;" src="assets/images/linkedin.png"></a>
+      <a href="https://github.com/brittanydrandolph"><img style="height:23px; margin-left:3px;" src="assets/images/github_black.png"></a>
+      </mat-toolbar-row>
+  </mat-toolbar>
+
+  <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle" style="font-family: 'Satisfy', cursive; font-size: 40px;">Contact Me</h5>
+            <button type="button" id="xOut" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+              <form (ngSubmit)="onSubmit()" #contactForm="ngForm" method="POST">
+                <input type="text" name="name" [(ngModel)]="data.name" class="form-control"  style="font-family: 'Alegreya Sans SC', sans-serif;" placeholder="Enter your name">
+                <br>
+                <input type="email" name="email" [(ngModel)]="data.email" class="form-control" style="font-family: 'Alegreya Sans SC', sans-serif;" placeholder="Enter your email">
+                <br>
+                <textarea name="message" [(ngModel)]="data.message" class="form-control" style="font-family: 'Alegreya Sans SC', sans-serif;" placeholder="Enter your message"></textarea>
+                <br>                
+                <button type="submit" id="submitButton" class="btn btn-primary" style="margin-left: 5px; float:right;" data-toggle="modal" data-target="#contactModal">Send</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" style="float:right;">Nevermind</button>
+              </form>
+          </div>
+        </div>
+      </div>
+  </div>
+
+<div class="container col-sm-12 col-md-10">
+    <div class="pic_div row px-0 sm-000">
+      <img class="picture" src="assets/images/screenshot.png">
+    </div>
+
+      <div class="row">
+        <div class="col-sm-12 col-md-7 mx-0 px-0">
+          <h3 class="header col-sm-12" id="about" style="margin-top:20px;">About Me</h3>
+          <div class="col-sm-12 pl-md-5 mt-3 paragraph text-justify">Hello! My name is Brittany and I'm an elementary school teacher turned software developer. Since making the transition to web development in July of 2019, I have learned several full stacks and developed a passion for creating beautifully designed, fully functioning applications. I am a lifelong learner, who believes in continuously improving my knowledge and skill set through education, and am eager to learn more technologies to add to my tool box! As a software developer, my mission is to improve the lives and well-being of others through the technologies I help build. 
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-5 text-center py-sm-3">
+          <img class="personal_picture" src ="assets/images/IMG_2687.png">
+        </div>
+        <br>
+        <br>
+      </div>
+
+
+      <div class="row px-0 sm-00">
+        <div class="picture2"></div>
+      </div>
+
+      
+      <div class="row">
+        <div class="col-sm-12 col-md-7 mx-0 px-0">
+          <h3 class="header col-sm-12" id="projects" style="margin-top:20px;">Projects</h3>
+        </div>
+        
+        <div class="col-sm-12 mt-2 text-justify">
+          <mat-accordion class="example-headers-align">
+            <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title class="projHeader">
+                  Ruff `n Snuggle
+                </mat-panel-title>
+                <mat-panel-description class="project_desc">
+                  Built with Python, Django and SQLite
+                  <mat-icon></mat-icon>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+          
+                
+              <p class="col-sm-12 pl-md-5 text-justify text-center project_desc_center">
+                A pet adoption web application where you can create an account and view the pets available for adoption! Each pet has a unique description and personality. Not sure which pet is the bet fit for you? Take the Find Your Perfect Pet quiz in the navigation bar! You'll be asked a series of questions, and if a pet in our databases matches what you're looking for,
+                you'll be redirected to their page!
+              </p>
+              <br>
+              <div class="row my-sm-0 py-sm-0 text-center">
+                <img class="gif_snuggle sm-0" SRC="https://brittanydrandolph.s3.us-east-2.amazonaws.com/snugglegif.gif">
+                <br>
+              </div>
+                <div class="row col-sm-12">
+                  <p class="project_desc_center text-center mx-auto mt-4">Collaborating partners: <a href="https://github.com/sgwade">Sam Wade</a> and <a href="https://github.com/JoshuaERichardson">Josh Richardson</a></p>
+                </div>
+                <div class="row text-center mb-2">
+                  <a href="https://github.com/brittanydrandolph/RuffnSnuggle">
+                    <img class="hub_link" src="assets/images/GitHub_Logo.png">
+                  </a>
+                </div>
+              
+
+              <div class="col-sm-12 mx-auto">
+                <mat-action-row>
+                  <button mat-button color="primary" (click)="nextStep()">Next</button>
+                </mat-action-row>
+              </div>
+          </mat-expansion-panel>
+
+
+          <!-- HARRYPOTTER -->
+          <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title class="projHeader">
+                Sorting Hat
+              </mat-panel-title>
+              <mat-panel-description class="project_desc">
+                Built with C#
+                <mat-icon></mat-icon>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+              <p class="col-sm-12 pl-md-5 text-justify text-center project_desc_center">
+                An RPG text-based Harry Potter themed sorting hat adventure! You will be asked a series of personality-defining questions, which you can answer by typing directly into the terminal. After taking your answers into consideration, you will be sorted into the Hogwarts house that best fits your personailty.
+              </p>
+              <br>
+              <div class="row my-sm-0 py-sm-0 text-center">
+                <img class="gif_snuggle sm-0" SRC="https://brittanydrandolph.s3.us-east-2.amazonaws.com/sortingHatgif.gif">
+                <br>
+              </div>
+              <div class="row col-sm-12">
+                <p class="project_desc_center text-cetner mx-auto mt-4">Collaborating partners: <a href="https://github.com/sgwade">Sam Wade</a></p>
+              </div>
+                <div class="row text-center mb-2">
+                  <a href="https://github.com/brittanydrandolph/CSharp_SortingHat"><img class="hub_link" src="assets/images/GitHub_Logo.png">
+                  </a>
+                </div>
+              <div class="col-sm-12 mx-auto">
+                <mat-action-row>
+                  <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                  <button mat-button color="primary" (click)="nextStep()">Next</button>
+                </mat-action-row>
+              </div>
+            </mat-expansion-panel>
+
+
+
+            <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title class="projHeader">
+                  Products & Categories
+                </mat-panel-title>
+                <mat-panel-description class="project_desc">
+                  Built with C#, .NET Core, Entity and MySQL
+                  <mat-icon></mat-icon>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+          
+                <p class="col-sm-12 pl-md-5 text-justify text-center project_desc_center">
+                  In this web application, the user can add various products and categories to the database. Then, using the power of Entity and MySQL, the user can create Many To Many relationships between the two groups where many products can belong to many categories, and many categories can be home to many products! For example, the products bacon and eggs can both belong to the categories "Food" and "Breakfast items".
+                </p>
+                <br>
+                <div class="row my-sm-0 py-sm-0  text-center">
+                  <img class="gif_snuggle sm-0" SRC="https://brittanydrandolph.s3.us-east-2.amazonaws.com/products.gif">
+                    <br>
+                </div>
+                <div class="row text-center mt-4 mb-2">
+                    <a href="https://github.com/brittanydrandolph/CSharp_productsCategories"><img class="hub_link" src="assets/images/GitHub_Logo.png"></a>
+                  </div>
+                  <div class="col-sm-12 mx-auto">
+                    <mat-action-row>
+                      <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                      <button mat-button color="primary" (click)="nextStep()">Next</button>
+                    </mat-action-row>
+                  </div>
+              </mat-expansion-panel>
+
+        
+              <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title class="projHeader">
+                    Wedding Planner
+                  </mat-panel-title>
+                  <mat-panel-description class="project_desc">
+                    Built with C#, .Net Core, Entity and MySQL<br>
+                    <mat-icon></mat-icon>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+            
+                  <p class="col-sm-12 pl-md-5 text-justify text-center project_desc_center">
+                    Love is in the air with this Wedding Planner web application! Wedding Planner was designed to allow users to organize their busy wedding schedules. With Wedding Planner, users can create a wedding for others to attend, RSVP to weddings created by other users, cancel their RSVP and delete a wedding they created. With the Wedding Planner app, you'll never be wondering where you're getting your next slice of wedding cake!
+                    </p>
+                  <br>
+                  <div class="row my-sm-0 py-sm-0  text-justfiy">
+                    <img class="gif_snuggle sm-0" SRC="https://brittanydrandolph.s3.us-east-2.amazonaws.com/weddingfinal.gif">
+                      <br>
+                  </div>
+                  <div class="row my-2 text-center mt-4 mb-2">
+                    <a href="https://github.com/brittanydrandolph/CSharp_weddingPlanner"><img class="hub_link"src="assets/images/GitHub_Logo.png"></a>
+                  </div>
+                    <div class="col-sm-12 mx-auto">
+                      <mat-action-row>
+                        <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                        <button mat-button color="primary" (click)="nextStep()">Next</button>
+                      </mat-action-row>
+                    </div>
+                </mat-expansion-panel>
+
+
+                <mat-expansion-panel [expanded]="step === 4" (opened)="setStep(4)" hideToggle>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title class="projHeader">
+                      Register for Classes
+                    </mat-panel-title>
+                    <mat-panel-description class="project_desc">
+                      Built with C#, .Net Core, Entity and MySQL
+                      <mat-icon></mat-icon>
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+              
+                    <p class="col-sm-12 pl-md-5 text-justify text-center project_desc_center">
+                      In this web application, users can login to thier account to register for classes! In order to register for a class, the user must have enough money in their bank account to cover the cost. To ensure this, users can add money to their account by clicking the "View Your Bank Account" link! After adding the desired amount, the user's Dashboard Action options will change to "Join" or remain at "Add money to join" depending on how much money was deposited. Additionally, users can add a class of thier own they would like to teach or edit the class if needed. Lastly, the user can click on the class title to view details about the class and view who has registered for the class. If the user changes thier mind, they can deregister from the Dashboard by clicking the "Leave" Action option.
+                    </p>
+                    <br>
+                    <div class="row my-sm-0 py-sm-0 text-center">
+                      <img class="gif_snuggle sm-0" SRC="https://brittanydrandolph.s3.us-east-2.amazonaws.com/students_classes.gif">
+                      <br>
+                    </div>
+                    <div class="row text-center mt-4 mb-2">
+                      <a  href="https://github.com/brittanydrandolph/students_classes"><img class="hub_link" src="assets/images/GitHub_Logo.png"></a>
+                    </div>
+                    <div class="col-sm-12 mx-auto">
+                      <mat-action-row>
+                        <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                        <button mat-button color="primary" (click)="nextStep()">Next</button>
+                      </mat-action-row>
+                    </div>
+                  </mat-expansion-panel>
+
+
+
+                  <mat-expansion-panel [expanded]="step === 5" (opened)="setStep(5)" hideToggle>
+                      <mat-expansion-panel-header>
+                        <mat-panel-title class="projHeader">
+                          Rate Cupcakes
+                        </mat-panel-title>
+                        <mat-panel-description class="project_desc">
+                          Built with MongoDB, Express, Node and Angular
+                          <mat-icon></mat-icon>
+                        </mat-panel-description>
+                      </mat-expansion-panel-header>
+                  
+                        <p class="col-sm-12 pl-md-5 text-justify text-center project_desc_center">
+                          In this single-page application, users are invited to submit a picture of a cupcake accompanied with a title and description. Each user can comment and rate each cupcake between one to five stars. Want to see the details about each cupcake? Click on the cupcake's photograph and a component will appear with the cupcake’s average rating and a list with all the comments made about that cupcake!
+                        </p>
+                        <br>
+                        <div class="row my-sm-0 py-sm-0 text-center">
+                          <img class="gif_snuggle sm-0" SRC="https://brittanydrandolph.s3.us-east-2.amazonaws.com/cakes.gif">
+                          <br>
+                        </div>
+                        <div class="row text-center mt-4 mb-2">
+                          <a  href="https://github.com/brittanydrandolph/MEAN_rateCakes"><img class="hub_link" src="assets/images/GitHub_Logo.png"></a>
+                        </div>
+                        <div class="col-sm-12 mx-auto">
+                          <mat-action-row>
+                            <button mat-button color="warn" (click)="prevStep()">Previous</button>
+                          </mat-action-row>
+                        </div>
+                      </mat-expansion-panel>
+
+        </mat-accordion>
+        <br>
+        <!-- <a href="#top" class="top">TOP</a> -->
+      </div>
+    </div>
+
+
+      <div class="row px-0 sm-00">
+        <div class="picture1"></div>
+      </div>
+      <div class="row">
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 col-md-7 mx-0 px-0">
+          <h3 class="header col-sm-12" id="tech" style="margin-top:20px;">Technologies I Use</h3>
+          <!-- <br><span class="tech_words" style="margin-left:155px; position: absolute; margin-top:-25px;">Technologies I am familiar with that have powered my projects</span> -->
+        </div>
+
+        <div class="logos_row row d-flex flex-wrap align-items-center">
+            <div class="col-3 text-center">
+              <img class="technologies" src="assets/images/c.png">
+            </div>
+            <div class="col-3 text-center">
+              <img class="technologies" src="assets/images/net.png"> 
+            </div>
+            <div class="col-3 text-center">
+              <img class="technologies" src="assets/images/wntity.png">
+            </div>
+            <div class="col-3 text-center mx-auto px-3">
+              <img class="technologies" src="assets/images/mysql.png">
+          </div>
+        </div>
+          
+
+          <div class="logos_row row d-flex flex-wrap align-items-center">
+            <div class="col-2 text-center">
+              <img class="technologies" src="assets/images/js.png">
+            </div>
+            <div class="col-2 text-center">
+              <img class="technologies" src="assets/images/ts.png">
+            </div>
+            <div class="col-2 text-center">
+              <img class="technologies" src="assets/images/mongo.png"> 
+            </div>
+            <div class="col-2 text-center">
+              <img class="technologies" src="assets/images/express.png">
+            </div>
+            <div class="col-2 text-center">
+              <img class="technologies" src="assets/images/angular.png">
+            </div>
+            <div class="col-2 text-center">
+              <img class="technologies" src="assets/images/nodejs.png">
+            </div>
+          </div>
+
+          <div class="logos_row row d-flex flex-wrap align-items-center">
+              <div class="col-3 text-center">
+                <img class="technologies-large text-center" src="assets/images/python.png">
+              </div>
+              <div class="col-3 text-center">
+                <img class="technologies-large text-center" src="assets/images/flask.png">
+              </div>
+              <div class="col-3 text-center">            
+                <img class="technologies-large text-center" src="assets/images/django.png">
+              </div>
+              <div class="col-3 text-center">            
+                <img class="technologies-large text-center align-baseline" src="assets/images/sqllite.png">
+              </div>
+            </div>
+
+
+
+          <div class="logos_row row d-flex flex-wrap align-items-center">
+            <div class="col-2 text-center">
+              <img class="technologies" src="assets/images/html5.png"> 
+            </div>
+            <div class="col-2 text-center">
+              <img class="technologies" src="assets/images/css.png">  
+            </div>
+            <div class="col-2 text-center">
+              <img class="technologies" src="assets/images/bootstrap.png"> 
+            </div>
+            <div class="col-2 text-center">
+              <img class="technologies" src="assets/images/jquery.png">
+            </div>
+            <div class="col-2 text-center">
+              <img class="technologies" src="assets/images/postman.png"> 
+            </div>
+            <div class="col-2 text-center">
+              <img class="technologies" src="assets/images/Octocat.png">
+            </div> 
+          </div>
+          <br>
+        <!-- <a href="#top" class="top">TOP</a> -->
+      </div>
+
+  
+
+  
+      <!-- <div class="container">
+          <div class="picture3"></div>
+      </div>
+
+      <div class="body">
+        <span class="header" id="contact" style="margin-top:20px;">Get In Touch</span>
+      </div>
+      <div class="body">
+          <a href="https://github.com/brittanydrandolph"><img class="technologies" src="assets/images/GitHub_Logo.png" alt="GitHib Link" class="icon"></a>
+          <a href="https://www.linkedin.com/in/brittanydrandolph/"><img class="technologies" src="assets/images/LI-Logo.png" alt="LinkedIn Link" class="icon_linkedin"></a>
+          <a href="#top" class="top">TOP</a>
+        </div> -->
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+
+<router-outlet></router-outlet>
